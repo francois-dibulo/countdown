@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>😘</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+  <style type="text/css">
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poiret One', cursive;
+      color: #222;
+      background: #F6F6F6;
+    }
+
+    .text_center {
+      text-align: center;
+    }
+
+    #days {
+      text-align: center;
+      font-size: 12vw;
+    }
+
+    .sub {
+      text-align: center;
+    }
+
+    .container {
+      text-shadow: 4px 7px 8px #2222225c;
+      font-size: 7vw;
+      height: 100%;
+    }
+
+    .row, .row-v {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .row-v {
+      flex-direction: column;
+    }
+
+    .j-center {
+      justify-content: center;
+      align-content: center;
+    }
+
+    .emojis {
+      margin-top: 4vh;
+      font-size: 10vw;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container row-v j-center">
+    <div id="days"></div>
+    <div class="sub">days left</div>
+    <div class="emojis text_center">
+    </div>
+  </div>
+
+
+  <script type="text/javascript">
+
+    function getDays() {
+      var date1 = new Date();
+      var date2 = new Date("03/28/2019");
+      var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+      return Math.ceil(timeDiff / (1000 * 3600 * 24));
+    }
+
+    function setDates() {
+      document.getElementById("days").innerHTML = getDays();
+      setTimeout(setDates, 10000);
+    }
+
+    setDates();
+  </script>
+
+</body>
+</html>
